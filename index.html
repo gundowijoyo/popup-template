@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mini pop up </title>
+    <style>
+.popup-warning {
+position: fixed;
+top: -100px; 
+right: 20px;
+background-color: #ff0074;
+color: white;
+padding: 15px 20px;
+border-radius: 8px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+display: flex;
+align-items: center;
+gap: 10px;
+z-index: 1000;
+transition: all 0.5s ease-in-out;
+}
+.popup-warning.show {
+top: 20px; 
+}
+.popup-warning .icon {
+font-size: 24px;
+}
+  
+  </style>
+
+</head>
+<body>
+
+<div class="popup-warning" id="warningPopup">
+<i class="fas fa-exclamation-triangle icon"></i>
+<span>Yaaah, penyimpanan kamu habis 😢. Hubungi developer yaaa!</span>
+</div>
+
+<script>
+function showWarning() {
+var popup = document.getElementById('warningPopup');
+popup.classList.add('show');
+setTimeout(function() {
+}, 5000);
+}
+window.onload = function() {
+showWarning();
+};
+</script>
+
+</body>
+</html>
